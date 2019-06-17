@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <style>
+            .clDiv{
+                font-family: monospace;   
+                color: white;
+                background: black;    
+                padding: 1px;   
+                margin: 3px;
+                margin-left: 10px;
+                width: 50%;
+                border-radius: 8px;
+            }
+            .code{
+                color: greenyellow;
+            }        
+        </style>
+    </head>
+    <body>
+        <h1>ES 6 - Introduction</h1>
+        
+        <h3>What is new in ES6?</h3>
+        <ul>
+            <li>Syntax and features</li>
+            <li>Classes, modules, array and object manipulation, etc</li>
+        </ul>
+        
+        <h3>Tools</h3>
+        <p>
+            <ul>
+                <li>Node: Install or use portable version setting Node path into "path" environment variable. With node we can use node package manager (npm) to installa dependencies.
+                    <div class="clDiv">
+                        <p> <span class="code">node -v</span> .......... To show the version</p>
+                        <p> <span class="code">npm -v</span> ........... To show the version</p>
+                        <p> <span class="code">npm i npm</span> ........ To update npm</p>
+                    </div>
+                </li>
+                <li>Babel: A transpiler reads code written in one language and produces the equivalent code in another. Browsers only currently have widespread support of older JS.
+                    Transpiler convert advanced TypeScript and CoffeScript code back into the original JS. Transpiles ES6 back into the supported pre ES6 JS. Babel is a JavaScript 
+                    compiler.
+                </li>
+                <li>Webpack: It is a npm, It allows us to run in an environment that hosts VAP. The benefist:
+                    <ul>                        
+                        <li>It bundles modules into one .js file</li>
+                        <li>Comes with a dev-server</li>
+                    </ul>
+                </li>
+            </ul>        
+        </p>
+
+        <h3>Set up Project and Webpack 4</h3>
+        <p>
+            The package.json vs package-lock.json<ul>
+                <li>The package.json file is the project manifest in the package manager npm. This file stores project name, version, dependencies, reposirtory, authors, licence, etc.                    
+                    <div class="clDiv">
+                        <p><span class="code">npm init -y</span> .......... Creates the package.json (initialize the project)</p>
+                    </div>
+                </li>
+                <li>The package-lock.json file stores the project dependencies.</li>
+            </ul>
+            <ul>The node package manager npm has 2 functions:
+                <li>Management the project release to npm, to be accessible by other npm users</li>
+                <li>Management the project dependencies</li>
+            </ul>
+            <p>For install webpack dependencies (webpack and webpack command line), execute the next command:
+                <div class="clDiv">
+                    <p><span class="code">npm i webpack@4.12.0 webpack-cli@3.0.3 --save--dev</span> .......... install webpack and webpack-cli and save them for develop environment </p>
+                </div>
+            </p>
+            <p>For execute scripts into package.json use npm command like "npm run start" or "npm run build". This command will execute the commands relationship with the script name "start" or "build". 
+                <div class="clDiv">
+                        <p> <span class="code">npm run start</span> ..... execute "webpack --mode development", this command will create a "dist" folder and main.js file </p>
+                        <p> <span class="code">npm run build</span> ..... will do the same that start, but the main.js file will be minimized because the mode will be "production"</p>
+                </div>
+            </p>
+
+        </p>
+
+        <h3>Configure Webpack and Development Server</h3>
+            <p>
+               Webpack let export the application like bundle. For it is necessary configure the "webpack.config.js" file. to define the module export. <br>
+               With the bundle funcionality will get the "build" folder with "bundle.js" and not need anymore the "dist" folder.
+            </p>
+            <p>
+                Is necessary install a webpack server to test the application. For this:
+                <div class="clDiv">
+                    <p><span class="code">npm i webpack-dev-server@3.1.4 --save-dev</span> ..... to install a webpack development server</p>
+                </div>
+                Now is necessary change the "start" script inside package.json to "webpack-dev-server --module development"<br>
+                Is necessary too add a new key "devServer" into webpack.config.js to define the devlopment server features. <br>
+                After add the new key, when the command "npm run start" application will be deployed and the server will be run. <br>
+                With the server run, the changes into "index.js" (file into app folder) can be shown inmeidately in the browser.
+            </p>
+
+        <h3>Setup Babel with Webpack</h3>
+        <p>
+            The main job of Babel is transfer all moder javascript ES6 to ES5. ES5 is fully supported on all browsers. <br>
+            Is necessary add three new dependencies related to configuring Babel:
+            <div class="clDiv">
+                <p><span class="code">npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev</span> ..... installa de Babel core, loader y preset environment</p>
+            </div>
+            Babel must be configured into "webpack.config.js" file, add a new key for this "module". But is necessary a extra configuration, for this create a new file ".babelrc"
+        </p>
+
+        <h3>Coding New ES6 Syntax</h3>
+        <p>
+            <h4>Declare variables and scope</h4>
+            
+
+        </p>
+    </body>
+</html>
