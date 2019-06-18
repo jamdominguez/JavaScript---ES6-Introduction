@@ -30,6 +30,6 @@ const ARRAY = [1,2,3]
 console.log(ARRAY);
 ARRAY.push(4);
 console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)
-//ARRAY = [1]; //show a ERROR no catcheable, DATA is read-only
+//ARRAY = [1]; //show a ERROR no catcheable, ARRAY is read-only
 
 
