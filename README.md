@@ -1,5 +1,6 @@
 # JavaScript-ES6_Introduction
-Introduction to ES6 using Node and Webpack
+Introduction to ES6 using Node and Webpack.
+Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 
 ## What is new in ES6?
 - Syntax and features
@@ -57,3 +58,21 @@ Babel must be configured into "webpack.config.js" file, add a new key for this "
 
 # Coding New ES6 Syntax
 ## Declare variables and scope
+Exist 2 ways for declare variables in javascript
+- Using "var" for function scope
+- Using "let" for block scope
+````javascript
+var name = 'John Snow';
+let a = 'hello';
+console.log('Before block: '+a+' '+name); //show hello
+
+{
+    var name = 'Ned Stark';
+    let a = 'bye';
+    console.log('Inside block: '+a+' '+name); //show bye
+    let b = 1000
+}
+
+console.log('After block:'+a+' '+name); //show hello
+console.log('Number:'+b); //show a ERROR because the variable let exist only in the block
+````
