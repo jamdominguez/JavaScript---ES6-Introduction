@@ -58,7 +58,7 @@ Babel must be configured into "webpack.config.js" file, add a new key for this "
 
 # Coding New ES6 Syntax
 ## Declare variables and scope
-Exist 2 ways for declare variables in javascript
+Exist 2 ways for declare variables in JavaScript:
 - Using "var" for function scope
 - Using "let" for block scope
 ````javascript
@@ -76,4 +76,16 @@ console.log('Before block: '+a+' '+name); //show hello
 
 console.log('After block:'+a+' '+name); //show hello
 console.log(b); //show a ERROR because the variable let exist only in the block (undefined)
+````
+
+In JavaScript a constant is declared with "const" keyword. The constant will be the reference to the variable, it is clarified in array example.
+````javascript
+const DATA = 2;
+console.log('This is a constant: '+DATA)
+//DATA = 3*4; //show a ERROR no catcheable, DATA is read-only
+const ARRAY = [1,2,3]
+console.log(ARRAY);
+ARRAY.push(4);
+console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)
+//ARRAY = [1]; //show a ERROR no catcheable, DATA is read-only
 ````

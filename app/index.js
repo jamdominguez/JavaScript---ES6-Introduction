@@ -1,3 +1,6 @@
+/**
+ * VARIABLES
+ */
 var name = 'John Snow';
 let a = 'hello';
 console.log('Before block: '+a+' '+name); //show hello
@@ -11,4 +14,22 @@ console.log('Before block: '+a+' '+name); //show hello
 }
 
 console.log('After block:'+a+' '+name); //show hello
-console.log(b); //show a ERROR because the variable let exist only in the block (undefined)
+try {
+    console.log(b); //show a ERROR because the variable let exist only in the block (undefined)
+} catch (e) {
+    console.log("ERROR: "+e);
+}
+
+/**
+ * CONSTANTS
+ */
+const DATA = 2;
+console.log('This is a constant: '+DATA)
+//DATA = 3*4; //show a ERROR no catcheable, DATA is read-only
+const ARRAY = [1,2,3]
+console.log(ARRAY);
+ARRAY.push(4);
+console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)
+//ARRAY = [1]; //show a ERROR no catcheable, DATA is read-only
+
+
