@@ -42,3 +42,31 @@ console.log(message_01);
 
 let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
+
+/**
+ * OPERATING AND DESTRUCTURING
+ */
+let first_array = [7,8,9];
+let second_array = [6, ...first_array,10];
+console.log(second_array);
+
+console.log('print function...')
+function print(a,b,c) {
+    console.log(a,b,c);
+}
+let z = [1,2,3];
+let y = [9,8];
+let w = [4,5,6,7];
+print(z); //show [1,2,3]
+print(...z); //show 1 2 3
+print(...y); //show 9 8 undefined
+print(...w); //show 4 5 6
+
+console.log('print2 function...')
+function print2(...z){
+    console.log(z);
+}
+print2(z); //show [Array(3)]
+print2(...z); //show [1,2,3]
+print2(1,2,3,4,5,6,7,8); //show [1,2,3,4,5,6,7,8]
+print2(1,'hello',true,2); //show [1,"hello",true,2]

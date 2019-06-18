@@ -79,7 +79,7 @@ The package.json will be:
 The main job of Babel is transfer all moder javascript ES6 to ES5. ES5 is fully supported on all browsers. <br>
 Is necessary add three new dependencies related to configuring Babel:
 ````command
-npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev ..... installa de Babel core, loader y preset environment
+npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev ..... install the Babel core, loader y preset environment
 ````
 Babel must be configured into "webpack.config.js" file, add a new key for this "module". But is necessary a extra configuration, for this create a new file ".babelrc"
 
@@ -88,6 +88,7 @@ Babel must be configured into "webpack.config.js" file, add a new key for this "
 Exist 2 ways for declare variables in JavaScript:
 - Using "var" for function scope
 - Using "let" for block scope
+In ES6 "let" keyword is used instead of "var". The "var" keyword can be used for global application variables.
 ````javascript
 var name = 'John Snow';
 let a = 'hello';
@@ -131,3 +132,39 @@ console.log(message_02);
 ````
 
 ## Operating and Destructuring
+ES6 introduces a new way to manipulate arrays and objects.
+It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
+````javascript
+//ES6
+let first_array = [7,8,9];
+let second_array = [6, ...first_array,10];
+console.log(second_array);
+//Similar code in ES5
+var first_array = [7, 8, 9];
+var second_array = [6].concat(first_array, [10]);
+console.log(second_array);
+````
+In ES6 use spread operator to pass server params into function. If the array is length minor than functio param, the last params will be undefined, but the lenght is bigger the first array values will be used by params. The next function works with the array component like isolate variables:
+````javascript
+function print(a,b,c) {
+    console.log(a,b,c);
+}
+let z = [1,2,3];
+let y = [9,8];
+let w = [4,5,6,7];
+print(...z); //show 1 2 3
+print(...y); //show 9 8 undefined
+print(...w); //show 4 5 6
+````
+
+To get any arguments number like array the function can be defined. The next function works with the array componet like array:
+
+````javascript
+function print2(...z){
+    console.log(z);
+}
+print2(z); //show [Array(3)]
+print2(...z); //show [1,2,3]
+print2(1,2,3,4,5,6,7,8); //show [1,2,3,4,5,6,7,8]
+print2(1,'hello',true,2); //show [1,"hello",true,2]
+````
