@@ -91,9 +91,10 @@
   !*** ./app/index.js ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("console.log('Hello Webpack')\r\nconsole.log('Hello on server')\n\n//# sourceURL=webpack:///./app/index.js?");
+"use strict";
+eval("\n\n/**\r\n * VARIABLES\r\n */\nvar name = 'John Snow';\nvar a = 'hello';\nconsole.log('Before block: ' + a + ' ' + name); //show hello\n\n{\n    console.log(_a); //a variable doen't exist in this scope (undefined)\n    var name = 'Ned Stark';\n    var _a = 'bye';\n    console.log('Inside block: ' + _a + ' ' + name); //show bye\n    var _b = 1000;\n}\n\nconsole.log('After block:' + a + ' ' + name); //show hello\ntry {\n    console.log(b); //show a ERROR because the variable let exist only in the block (undefined)\n} catch (e) {\n    console.log(\"ERROR: \" + e);\n}\n\n/**\r\n * CONSTANTS\r\n */\nvar DATA = 2;\nconsole.log('This is a constant: ' + DATA);\n//DATA = 3*4; //show a ERROR no catcheable, DATA is read-only\nvar ARRAY = [1, 2, 3];\nconsole.log(ARRAY);\nARRAY.push(4);\nconsole.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)\n//ARRAY = [1]; //show a ERROR no catcheable, ARRAY is read-only\n\n/**\r\n * LITERAL/STRINGS\r\n */\nvar greeting = 'hello';\nvar name = 'world';\nvar message_01 = greeting + ' ' + name;\nconsole.log(message_01);\n\nvar message_02 = greeting + ' ' + name; //ES6 template for literals/strings\nconsole.log(message_02);\n\n//# sourceURL=webpack:///./app/index.js?");
 
 /***/ })
 

@@ -47,6 +47,33 @@ Now is necessary change the "start" script inside package.json to "webpack-dev-s
 Is necessary too add a new key "devServer" into webpack.config.js to define the devlopment server features.
 After add the new key, when the command "npm run start" application will be deployed and the server will be run.
 With the server run, the changes into "index.js" (file into app folder) can be shown inmeidately in the browser.
+The package.json will be:
+````json
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "buildDev": "webpack --mode development",
+    "buildProd": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
+````
 
 ## Set up Babel with Webpack
 The main job of Babel is transfer all moder javascript ES6 to ES5. ES5 is fully supported on all browsers. <br>
@@ -78,6 +105,7 @@ console.log('After block:'+a+' '+name); //show hello
 console.log(b); //show a ERROR because the variable let exist only in the block (undefined)
 ````
 
+## Declare constants
 In JavaScript a constant is declared with "const" keyword. The constant will be the reference to the variable, it is clarified in array example.
 ````javascript
 const DATA = 2;
@@ -89,3 +117,17 @@ ARRAY.push(4);
 console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)
 //ARRAY = [1]; //show a ERROR no catcheable, ARRAY is read-only
 ````
+
+### Template Literals/Strings
+In ES6 is possible optimized concatenation using templates. It is used like regular expressio, they have surrounding backticks `` with interpolated ${} symbols for variables.
+````javascript
+var greeting = 'hello';
+var name = 'world';
+var message_01 = greeting+' '+name;
+console.log(message_01);
+
+let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
+console.log(message_02);
+````
+
+## Operating and Destructuring

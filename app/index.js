@@ -32,4 +32,13 @@ ARRAY.push(4);
 console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have another value (can't be reassigned)
 //ARRAY = [1]; //show a ERROR no catcheable, ARRAY is read-only
 
+/**
+ * LITERAL/STRINGS
+ */
+var greeting = 'hello';
+var name = 'world';
+var message_01 = greeting+' '+name;
+console.log(message_01);
 
+let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
+console.log(message_02);
