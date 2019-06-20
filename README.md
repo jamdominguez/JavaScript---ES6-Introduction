@@ -2,6 +2,21 @@
 Introduction to ES6 using Node and Webpack.
 Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 
+## Table of contents
+- [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
+  - [Table of contents](#Table-of-contents)
+  - [What is new in ES6?](#What-is-new-in-ES6)
+  - [Tools](#Tools)
+- [1. Project Configuration](#1-Project-Configuration)
+  - [1.1. Set up Project Webpack 4](#11-Set-up-Project-Webpack-4)
+  - [1.2. Configure Webpack and Development Server](#12-Configure-Webpack-and-Development-Server)
+  - [1.3. Set up Babel with Webpack](#13-Set-up-Babel-with-Webpack)
+- [2. Coding New ES6 Syntax](#2-Coding-New-ES6-Syntax)
+  - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
+  - [2.2. Declare constants](#22-Declare-constants)
+  - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
+  - [2.4. Operating and Destructuring](#24-Operating-and-Destructuring)
+
 ## What is new in ES6?
 - Syntax and features
 - Classes, modules, array and object manipulation
@@ -18,21 +33,6 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
  - Webpack: It is a npm, It allows us to run in an environment that hosts VAP. The benefist:
     - It bundles modules into one .js file    
     - Comes with a dev-server
-  
-## Table of contents
-- [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
-  - [What is new in ES6?](#What-is-new-in-ES6)
-  - [Tools](#Tools)
-  - [Table of contents](#Table-of-contents)
-- [1. Project Configuration](#1-Project-Configuration)
-  - [1.1. Set up Project Webpack 4](#11-Set-up-Project-Webpack-4)
-  - [1.2. Configure Webpack and Development Server](#12-Configure-Webpack-and-Development-Server)
-  - [1.3. Set up Babel with Webpack](#13-Set-up-Babel-with-Webpack)
-- [2. Coding New ES6 Syntax](#2-Coding-New-ES6-Syntax)
-  - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
-  - [2.2. Declare constants](#22-Declare-constants)
-  - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
-  - [2.4. Operating and Destructuring](#24-Operating-and-Destructuring)
 
 
 # 1. Project Configuration
