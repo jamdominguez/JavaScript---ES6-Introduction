@@ -86,3 +86,12 @@ let [ninja, fighter, throw_thunder] = heroes; //3 variables
 console.log(ninja, fighter, throw_thunder);
 let [human,...goods] = heroes; //1 variable (position 0), 1 array (positions 1 and 2)
 console.log(human, goods);
+
+//Destructuring objects
+let wizard = {
+    magical: true,
+    power: 10
+}
+let magical = wizard.magical;
+let power = wizard.power;
+console.log(magical,power);

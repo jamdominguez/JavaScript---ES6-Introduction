@@ -197,3 +197,13 @@ let [human,...goods] = heroes; //1 variable (position 0), 1 array (positions 1 a
 console.log(human, goods);
 ````
 ### 2.4.2. Destructuring assignament - Objects
+It is possible apply the destructuring assignament to JavaScript Objects:
+````javascript
+let wizard = {
+    magical: true,
+    power: 10
+}
+let magical = wizard.magical;
+let power = wizard.power;
+console.log(magical,power);
+````
