@@ -19,8 +19,24 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
     - It bundles modules into one .js file    
     - Comes with a dev-server
   
-# Project Configuration
-## Set up Project Webpack 4
+## Table of contents
+- [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
+  - [What is new in ES6?](#What-is-new-in-ES6)
+  - [Tools](#Tools)
+  - [Table of contents](#Table-of-contents)
+- [1. Project Configuration](#1-Project-Configuration)
+  - [1.1. Set up Project Webpack 4](#11-Set-up-Project-Webpack-4)
+  - [1.2. Configure Webpack and Development Server](#12-Configure-Webpack-and-Development-Server)
+  - [1.3. Set up Babel with Webpack](#13-Set-up-Babel-with-Webpack)
+- [2. Coding New ES6 Syntax](#2-Coding-New-ES6-Syntax)
+  - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
+  - [2.2. Declare constants](#22-Declare-constants)
+  - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
+  - [2.4. Operating and Destructuring](#24-Operating-and-Destructuring)
+
+
+# 1. Project Configuration
+## 1.1. Set up Project Webpack 4
 - The package.json vs package-lock.json
     ``` command
     npm init -y ..... Creates the package.json (initialize the project)
@@ -36,7 +52,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
     npm run start ..... execute "webpack --mode development", this command will create a "dist" folder and main.js file
     npm run build ..... will do the same that start, but the main.js file will be minimized because the mode will be "production"
     ````
-## Configure Webpack and Development Server
+## 1.2. Configure Webpack and Development Server
 Webpack let export the application like bundle. For it is necessary configure the "webpack.config.js" file. to define the module export. <br>
 With the bundle funcionality will get the "build" folder with "bundle.js" and not need anymore the "dist" folder.
 Is necessary install a webpack server to test the application. For this:
@@ -75,7 +91,7 @@ The package.json will be:
 }
 ````
 
-## Set up Babel with Webpack
+## 1.3. Set up Babel with Webpack
 The main job of Babel is transfer all moder javascript ES6 to ES5. ES5 is fully supported on all browsers. <br>
 Is necessary add three new dependencies related to configuring Babel:
 ````command
@@ -83,8 +99,8 @@ npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev ...
 ````
 Babel must be configured into "webpack.config.js" file, add a new key for this "module". But is necessary a extra configuration, for this create a new file ".babelrc"
 
-# Coding New ES6 Syntax
-## Declare variables and scope
+# 2. Coding New ES6 Syntax
+## 2.1. Declare variables and scope
 Exist 2 ways for declare variables in JavaScript:
 - Using "var" for function scope
 - Using "let" for block scope
@@ -106,7 +122,7 @@ console.log('After block:'+a+' '+name); //show hello
 console.log(b); //show a ERROR because the variable let exist only in the block (undefined)
 ````
 
-## Declare constants
+## 2.2. Declare constants
 In JavaScript a constant is declared with "const" keyword. The constant will be the reference to the variable, it is clarified in array example.
 ````javascript
 const DATA = 2;
@@ -119,7 +135,7 @@ console.log(ARRAY); //the array can be modified but ARRAY constant doesn't have 
 //ARRAY = [1]; //show a ERROR no catcheable, ARRAY is read-only
 ````
 
-### Template Literals/Strings
+## 2.3. Template Literals/Strings
 In ES6 is possible optimized concatenation using templates. It is used like regular expressio, they have surrounding backticks `` with interpolated ${} symbols for variables.
 ````javascript
 var greeting = 'hello';
@@ -131,7 +147,7 @@ let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
 ````
 
-## Operating and Destructuring
+## 2.4. Operating and Destructuring
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
 ````javascript
