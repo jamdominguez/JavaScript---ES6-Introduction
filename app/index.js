@@ -46,6 +46,7 @@ console.log(message_02);
 /**
  * OPERATING AND DESTRUCTURING
  */
+console.log('OPERATING AND DESTRUCTURING')
 let first_array = [7,8,9];
 let second_array = [6, ...first_array,10];
 console.log(second_array);
@@ -70,3 +71,18 @@ print2(z); //show [Array(3)]
 print2(...z); //show [1,2,3]
 print2(1,2,3,4,5,6,7,8); //show [1,2,3,4,5,6,7,8]
 print2(1,'hello',true,2); //show [1,"hello",true,2]
+
+let array_a = [100,200];
+let array_b = array_a[0];
+let array_c = array_a[1];
+console.log(array_b,array_c);
+
+let [array_x, array_y] = array_a; //array_x will be the first element and array_y the second, of array_a
+console.log(array_x,array_y);
+
+//Desctructuring operator
+let heroes = ['Ryu Hayabusa', 'WonderWoman', 'Thor'];
+let [ninja, fighter, throw_thunder] = heroes; //3 variables
+console.log(ninja, fighter, throw_thunder);
+let [human,...goods] = heroes; //1 variable (position 0), 1 array (positions 1 and 2)
+console.log(human, goods);
