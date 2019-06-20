@@ -16,7 +16,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [2.2. Declare constants](#22-Declare-constants)
   - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
   - [2.4. Operating and Destructuring](#24-Operating-and-Destructuring)
-    - [2.4.1. Destructuring - Arrays](#241-Destructuring---Arrays)
+    - [2.4.1. Destructuring assignament - Arrays](#241-Destructuring-assignament---Arrays)
     - [2.4.2. Destructuring assignament - Objects](#242-Destructuring-assignament---Objects)
 
 ## What is new in ES6?
@@ -150,7 +150,7 @@ console.log(message_02);
 ````
 
 ## 2.4. Operating and Destructuring
-### 2.4.1. Destructuring - Arrays
+### 2.4.1. Destructuring assignament - Arrays
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
 ````javascript
