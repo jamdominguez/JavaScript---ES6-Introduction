@@ -15,9 +15,13 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
   - [2.2. Declare constants](#22-Declare-constants)
   - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
-  - [2.4. Operating and Destructuring](#24-Operating-and-Destructuring)
-    - [2.4.1. Destructuring assignament - Arrays](#241-Destructuring-assignament---Arrays)
-    - [2.4.2. Destructuring assignament - Objects](#242-Destructuring-assignament---Objects)
+  - [3 Operating and Destructuring](#3-Operating-and-Destructuring)
+    - [3.1. Destructuring assignament - Arrays](#31-Destructuring-assignament---Arrays)
+    - [3.2. Destructuring assignament - Objects](#32-Destructuring-assignament---Objects)
+- [4. Functions and Methods](#4-Functions-and-Methods)
+  - [4.1. Arrow Functions](#41-Arrow-Functions)
+  - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
+  - [4.3. Map Method](#43-Map-Method)
 
 ## What is new in ES6?
 - Syntax and features
@@ -149,8 +153,8 @@ let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
 ````
 
-## 2.4. Operating and Destructuring
-### 2.4.1. Destructuring assignament - Arrays
+## 3 Operating and Destructuring
+### 3.1. Destructuring assignament - Arrays
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
 ````javascript
@@ -196,7 +200,7 @@ console.log(ninja, fighter, throw_thunder);
 let [human,...goods] = heroes; //1 variable (position 0), 1 array (positions 1 and 2)
 console.log(human, goods);
 ````
-### 2.4.2. Destructuring assignament - Objects
+### 3.2. Destructuring assignament - Objects
 It is possible apply the destructuring assignament to JavaScript Objects:
 ````javascript
 // Before ES6
@@ -218,7 +222,7 @@ let wizard = {
 let {magical, power} = wizard;
 console.log("Wizard", magical,power);
 ````
-Note that using destructuring assignament with array, in the variables's bunch is used **[]** charancters while in the destructuring assignament with objects, in the variables's bunch is used **{}** characters.<br>
+Note that using destructuring assignament with array, in the variables's bunch is used **[]** characters while in the destructuring assignament with objects, in the variables's bunch is used **{}** characters.<br>
 In the destructuring with object the name of the variables and the name of the objcet property must be the same to assing the value. It is possible reuse the variables name using a new code block with **()** characters.
 ````javascript
 let warrior = {
@@ -231,3 +235,68 @@ console.log('Warrior',magical_01,power_01); // show undefined undefined, the var
 ({magical,power} = warrior); //Use () to create new block and can assig the variables
 console.log('Warrior',magical,power);
 ````
+
+# 4. Functions and Methods
+## 4.1. Arrow Functions
+Arrow functions are anonymous, don't have a named identifier.
+It is called an air function
+````javascript
+function() {...} VS () => {...}
+````
+````javascript
+function boom(){
+    console.log('boom()  3...2...1...BOOM!');
+}
+boom();
+const otherBoom = () => {
+    console.log('boom()  3...2...1...Other BOOM!');
+}
+otherBoom();
+````
+It is usefull when implement business logic with anonymous functions like **setTimeout** or **setInterval** methods.
+````javascript
+setTimeout(function(){
+    console.log('setTimeout  3...2...1...BOOM!');
+}, 1000);
+setTimeout(() => {
+    console.log('setTimeout  3...2...1...BOOM!');
+}, 1000);
+//
+let i = 3;
+let myCount = setInterval(function(){
+    if (i > 0) {
+        console.log(`${i--} ...`);    
+    } else {
+        console.log('BOOM!');
+        clearInterval(myCount);
+    } 
+}, 1000);
+
+let j = 3;
+let myOtherCount = setInterval(() => {
+    if (j > 0) {
+        console.log(`${j--} ...`);    
+    } else {
+        console.log('Ohter BOOM!');
+        clearInterval(myOtherCount);
+    } 
+}, 1000);
+````
+
+## 4.2. Arrow Function ignoring **this**
+Arrow functions do not bind their own **this**. Each function has its own scope and it creates for itselfs a new keyword called this within that scope.<br>
+**This** is an object that within the function scope. The function then bind keys and values to the this object.
+````javascript
+this.a = 10;
+const newprint = function() {    
+    console.log('this.a',this.a); //show undefined, no property a inside function
+}
+newprint();
+
+const newarrowPrint = () => {
+    console.log('this.a in arrowPrint',this.a); //show 10, aroww function don't have this object in the scope
+}
+newarrowPrint();
+````
+
+## 4.3. Map Method

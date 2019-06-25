@@ -8,6 +8,9 @@
     "buildDev": "webpack --mode development",
     "buildProd": "webpack --mode production"
   },
+  "babel": {
+    "presets": ["es2015"]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

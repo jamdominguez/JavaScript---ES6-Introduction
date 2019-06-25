@@ -113,3 +113,80 @@ console.log('Warrior',magical_01,power_01); // show undefined undefined, the var
 
 ({magical,power} = warrior); //Use () to create new block and can assig the variables
 console.log('Warrior',magical,power);
+
+/**
+ * Functions and Methods
+ */ 
+// Using function keyword
+function boom(){
+    console.log('boom()  3...2...1...BOOM!');
+}
+boom();
+const otherBoom = () => {
+    console.log('boom()  3...2...1...Other BOOM!');
+}
+otherBoom();
+// Using function anonyomus
+setTimeout(function(){
+    console.log('setTimeout  3...2...1...BOOM!');
+}, 1000);
+setTimeout(() => {
+    console.log('setTimeout  3...2...1...BOOM!');
+}, 1000);
+//
+let i = 3;
+let myCount = setInterval(function(){
+    if (i > 0) {
+        console.log(`${i--} ...`);    
+    } else {
+        console.log('BOOM!');
+        clearInterval(myCount);
+    } 
+}, 1000);
+// Using aero/arrow funcion
+let j = 3;
+let myOtherCount = setInterval(() => {
+    if (j > 0) {
+        console.log(`${j--} ...`);    
+    } else {
+        console.log('Ohter BOOM!');
+        clearInterval(myOtherCount);
+    } 
+}, 1000);
+
+/**
+ * Ignoring this
+ */
+/* show error in Chrome "this is undefined"
+this.a = 10;
+const newprint = function() {
+    console.log('this.a',this.a);
+}
+newprint();
+
+const newarrowPrint = () => {
+    console.log('this.a in arrowPrint',this.a);
+}
+newarrowPrint();
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
