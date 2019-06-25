@@ -23,6 +23,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
   - [4.3. Map Method - mapping in ES6](#43-Map-Method---mapping-in-ES6)
   - [4.4. Filter Method - filtering in ES6](#44-Filter-Method---filtering-in-ES6)
+- [Modules in ES](#Modules-in-ES)
 
 ## What is new in ES6?
 - Syntax and features
@@ -239,8 +240,8 @@ console.log('Warrior',magical,power);
 
 # 4. Functions and Methods
 ## 4.1. Arrow Functions
-Arrow functions are anonymous, don't have a named identifier.
-It is called an air function
+Arrow functions are anonymous, don't have a name identifier. Arrow functions work like normal method expressions in JavaScript, but with a shorter syntax
+It is called an air function. They do not bind the this object to their function scope.
 ````javascript
 function() {...} VS () => {...}
 ````
@@ -336,3 +337,19 @@ More helper methods with ES6. We can take advantage of their functions to reduce
 - **find()** returns a value in an array that passas a given test.
 - **forEach()**, similar to map, calls a function for each array element.
 - **reduce(), some(), keys(), values()**...
+
+
+# Modules in ES
+Modules in JavaScript refert ot reusable pieces of code within our application or system. It helps whe our application grows.<br>
+The **export** keyword let access the code from other file using **import** keyword.
+````javascript
+// inside student.js
+export const students = ['Harry', 'Ron', 'Hermoine'];
+````
+````javascript
+// inside index.js
+import { students } from "./student";
+
+console.log(students)
+````
+If need export all file content it is possible export a module instead echa variable/function
