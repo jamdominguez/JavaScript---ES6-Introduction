@@ -199,6 +199,7 @@ console.log(human, goods);
 ### 2.4.2. Destructuring assignament - Objects
 It is possible apply the destructuring assignament to JavaScript Objects:
 ````javascript
+// Before ES6
 let wizard = {
     magical: true,
     power: 10
@@ -206,4 +207,27 @@ let wizard = {
 let magical = wizard.magical;
 let power = wizard.power;
 console.log(magical,power);
+````
+Use several lines to assigne variables is so heavy, with ES6 it is possible assigne variable in only one line using destructuring method:
+````javascript
+// ES6
+let wizard = {
+    magical: true,
+    power: 10
+}
+let {magical, power} = wizard;
+console.log("Wizard", magical,power);
+````
+Note that using destructuring assignament with array, in the variables's bunch is used **[]** charancters while in the destructuring assignament with objects, in the variables's bunch is used **{}** characters.<br>
+In the destructuring with object the name of the variables and the name of the objcet property must be the same to assing the value. It is possible reuse the variables name using a new code block with **()** characters.
+````javascript
+let warrior = {
+    magical: false,
+    power: 12
+}
+let {magical_01, power_01} = warrior;
+console.log('Warrior',magical_01,power_01); // show undefined undefined, the variables and object properties has diferrent names
+
+({magical,power} = warrior); //Use () to create new block and can assig the variables
+console.log('Warrior',magical,power);
 ````

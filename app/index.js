@@ -92,6 +92,24 @@ let wizard = {
     magical: true,
     power: 10
 }
-let magical = wizard.magical;
-let power = wizard.power;
-console.log(magical,power);
+//let magical = wizard.magical;
+//let power = wizard.power;
+let {magical, power} = wizard;
+console.log('Wizard', magical,power);
+
+let ranger = {
+    magical2: false,
+    power2: 9
+}
+let {magical2, power2} = ranger;
+console.log('Ranger',magical2,power2);
+
+let warrior = {
+    magical: false,
+    power: 12
+}
+let {magical_01, power_01} = warrior;
+console.log('Warrior',magical_01,power_01); // show undefined undefined, the variables and object properties has diferrent names
+
+({magical,power} = warrior); //Use () to create new block and can assig the variables
+console.log('Warrior',magical,power);
