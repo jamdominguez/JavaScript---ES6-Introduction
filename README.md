@@ -21,7 +21,8 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 - [4. Functions and Methods](#4-Functions-and-Methods)
   - [4.1. Arrow Functions](#41-Arrow-Functions)
   - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
-  - [4.3. Map Method](#43-Map-Method)
+  - [4.3. Map Method - mapping in ES6](#43-Map-Method---mapping-in-ES6)
+  - [4.4. Filter Method - filtering in ES6](#44-Filter-Method---filtering-in-ES6)
 
 ## What is new in ES6?
 - Syntax and features
@@ -299,7 +300,7 @@ const newarrowPrint = () => {
 newarrowPrint();
 ````
 
-## 4.3. Map Method
+## 4.3. Map Method - mapping in ES6
 Tha Map funtion in ES6 allow create arrays by calling a function on each element in array.
 ````javascript
 let points = [10,20,30];
@@ -315,3 +316,23 @@ The callback can be changed to an anonymous function. In ES6 can take advantage 
 let points_03 = points.map(element => element + 1);
 console.log('points_03',points_03) //show [11,21,31]
 ````
+
+## 4.4. Filter Method - filtering in ES6
+The filter method returns a new array based on an initial array, rather than a new array of the same size it usually reudces the array based on some test.
+````javascript
+let isPassing = (grade) => {
+    return grade >= 70;
+}
+let scores = [90,85,67,71,70,55,92];
+let passing = scores.filter(isPassing);
+console.log(passing);
+````
+Just like with the map function we can shorten our code down with an error function. Only one line.
+````javascript
+let passing_02 = scores.filter(element => element >= 70);
+console.log(passing_02);
+````
+More helper methods with ES6. We can take advantage of their functions to reduce your code:
+- **find()** returns a value in an array that passas a given test.
+- **forEach()**, similar to map, calls a function for each array element.
+- **reduce(), some(), keys(), values()**...
