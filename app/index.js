@@ -170,10 +170,27 @@ const newarrowPrint = () => {
 newarrowPrint();
 */
 
+/**
+ * Map method
+ */
+let points = [10,20,30];
+let addOne = function(element) {
+    return element + 1;
+}
+let points_02 = points.map(addOne);
+console.log(points); //show [10,20,30]
+console.log(points_02); //show [11,21,31]
 
+// the callback can be changed to an anonymous function
+let points_03 = points.map(element => element + 1);
+console.log('points_03',points_03) //show [11,21,31]
 
-
-
+let lengths = [3, 7, 5];
+let multiple = 8;
+const scale = (multiple) => {
+  return lengths.map() * multiple // TODO fill out the rest;
+};
+scale()
 
 
 

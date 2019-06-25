@@ -301,3 +301,17 @@ newarrowPrint();
 
 ## 4.3. Map Method
 Tha Map funtion in ES6 allow create arrays by calling a function on each element in array.
+````javascript
+let points = [10,20,30];
+let addOne = function(element) {
+    return element + 1;
+}
+let points_02 = points.map(addOne);
+console.log(points); //show [10,20,30]
+console.log(points_02); //show [11,21,31]
+````
+The callback can be changed to an anonymous function. In ES6 can take advantage of the anonymous error function ever further rather than declaring the whole addOne function. Can void **()** characters inf the arrow function has only one line and only one parameter.
+````javascript
+let points_03 = points.map(element => element + 1);
+console.log('points_03',points_03) //show [11,21,31]
+````
