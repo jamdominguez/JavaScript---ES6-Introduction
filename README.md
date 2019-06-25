@@ -15,9 +15,9 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
   - [2.2. Declare constants](#22-Declare-constants)
   - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
-  - [3 Operating and Destructuring](#3-Operating-and-Destructuring)
-    - [3.1. Destructuring assignament - Arrays](#31-Destructuring-assignament---Arrays)
-    - [3.2. Destructuring assignament - Objects](#32-Destructuring-assignament---Objects)
+- [3 Operating and Destructuring](#3-Operating-and-Destructuring)
+  - [3.1. Destructuring assignament - Arrays](#31-Destructuring-assignament---Arrays)
+  - [3.2. Destructuring assignament - Objects](#32-Destructuring-assignament---Objects)
 - [4. Functions and Methods](#4-Functions-and-Methods)
   - [4.1. Arrow Functions](#41-Arrow-Functions)
   - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
@@ -153,8 +153,8 @@ let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
 ````
 
-## 3 Operating and Destructuring
-### 3.1. Destructuring assignament - Arrays
+# 3 Operating and Destructuring
+## 3.1. Destructuring assignament - Arrays
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
 ````javascript
@@ -200,7 +200,7 @@ console.log(ninja, fighter, throw_thunder);
 let [human,...goods] = heroes; //1 variable (position 0), 1 array (positions 1 and 2)
 console.log(human, goods);
 ````
-### 3.2. Destructuring assignament - Objects
+## 3.2. Destructuring assignament - Objects
 It is possible apply the destructuring assignament to JavaScript Objects:
 ````javascript
 // Before ES6
@@ -300,3 +300,4 @@ newarrowPrint();
 ````
 
 ## 4.3. Map Method
+Tha Map funtion in ES6 allow create arrays by calling a function on each element in array.
