@@ -29,6 +29,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 - [6. Classes in ES6](#6-Classes-in-ES6)
   - [6.1. Classes set up](#61-Classes-set-up)
   - [6.1. Classes inheritance](#61-Classes-inheritance)
+- [NOTES](#NOTES)
 
 ## What is new in ES6?
 - Syntax and features
@@ -423,3 +424,58 @@ merry.greet();
 ````
 
 ## 6.1. Classes inheritance
+Note the next points:
+- In most cases classes exist in separate modules. In inheritance is used the **extends** keyword for extend of other class. The class modules are exported by **default**.
+- It is possible create a constructor into son class, but we do reference to **this** object, must do explicity called to **super()** method (calls to the parent constructor).
+- If a **constructor** is not defined in the son class, the parent constructor will be called when declare a new son object. Not is necessary implement a constructor if the constructor behavior will be the same of the parent. Only has sense implement a son constructor if it will do some more / or different that the parent's constructor.
+- It is possible **override** the parent's methods and variables into son class, but it only affect to thoses son's objects.
+````javascript
+// inside entity.js
+class Entity {    
+    constructor(name,height) {
+        this.name = name;
+        this.height = height;
+    }
+
+    greet() {
+        console.log(`Hi! I'm ${this.name} from the Middle Earth`);
+    }
+}
+
+export default Entity;
+````
+````javascript
+// inside index.js
+import Entity from "./entity"
+
+class Hobbit extends Entity {
+    // Not is necessary if the implementation is equal to the parent
+    constructor(name, height) {
+        super(name, height)        
+    }
+
+    //@Override
+    greet() {
+        console.log(`Hello! I'm ${this.name} from the Shire`)
+    }
+}
+
+let frodo = new Hobbit('Frodo Baggins',4.7)
+console.log(frodo)
+frodo.greet()
+````
+
+
+
+
+
+
+
+_________________________________
+_________________________________
+_________________________________
+_________________________________
+# NOTES
+- Is it possible arrow function into class definition?
+- Is it possible "autoimport"(inheritance classes) in Visual Studio Code?
+- How comment several code lines in Visual Studio Code? 

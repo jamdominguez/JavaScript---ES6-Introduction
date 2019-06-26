@@ -1,13 +1,19 @@
-class Entity {
-    constructor(name,height) {
-        this.name = name;
-        this.height = height;
+import Entity from "./entity"
+
+class Hobbit extends Entity {
+    // Not is necessary if the implementation is equal to the parent
+    constructor(name, height) {
+        super(name, height)        
     }
 
+    //@Override
     greet() {
-        console.log(`Hi! I'm ${this.name} from the Middle Earth`);
+        console.log(`Hello! I'm ${this.name} from the Shire`)
     }
 }
 
-let merry = new Entity('Merry',4.6);
-merry.greet();
+let frodo = new Hobbit('Frodo Baggins',4.7)
+console.log(frodo)
+frodo.greet()
+
+
