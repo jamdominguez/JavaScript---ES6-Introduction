@@ -23,9 +23,12 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
   - [4.3. Map Method - mapping in ES6](#43-Map-Method---mapping-in-ES6)
   - [4.4. Filter Method - filtering in ES6](#44-Filter-Method---filtering-in-ES6)
-- [5. Modules in ES](#5-Modules-in-ES)
+- [5. Modules in ES6](#5-Modules-in-ES6)
   - [5.1. Exporting variables/constants](#51-Exporting-variablesconstants)
   - [5.2. Exporting data/functions](#52-Exporting-datafunctions)
+- [6. Classes in ES6](#6-Classes-in-ES6)
+  - [6.1. Classes set up](#61-Classes-set-up)
+  - [6.1. Classes inheritance](#61-Classes-inheritance)
 
 ## What is new in ES6?
 - Syntax and features
@@ -341,7 +344,7 @@ More helper methods with ES6. We can take advantage of their functions to reduce
 - **reduce(), some(), keys(), values()**...
 
 
-# 5. Modules in ES
+# 5. Modules in ES6
 ## 5.1. Exporting variables/constants
 Modules in JavaScript refert ot reusable pieces of code within our application or system. It helps whe our application grows.<br>
 The **export** keyword let access the code from other file using **import** keyword.
@@ -393,3 +396,30 @@ export default const multiply (x,y) => x*y; // This retur a error in the browser
 ````
 The default export represents a fallback or “main” value/function for a module.<br>
 You cannot write the export default syntax and declare variables on the same line
+
+# 6. Classes in ES6
+## 6.1. Classes set up
+ES6 introduce javascript classes and laid the groundwork for a new object oriented programming inheritance model.<br>
+The classes will have some revelant data according to its state and behavior.<br>
+Object oriented programming has adventages to make a encapsulable and redable code.<br>
+Note the next points:
+- Use the **class** keyword to define a class in JavaScript,
+- Classes have a **constructor()**, it is a special method create an initialises the logic data for the class. Only one by class.
+- The object are declared using **new** keyword.
+````javascript
+class Entity {
+    constructor(name,height) {
+        this.name = name;
+        this.height = height;
+    }
+
+    greet() {
+        console.log(`Hi! I'm ${this.name} from the Middle Earth`);
+    }
+}
+
+let merry = new Entity('Merry',4.6);
+merry.greet();
+````
+
+## 6.1. Classes inheritance

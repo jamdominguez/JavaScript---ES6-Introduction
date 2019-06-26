@@ -1,6 +1,13 @@
-import { add, multiply } from "./calculator";
-import substraction from "./calculator";
+class Entity {
+    constructor(name,height) {
+        this.name = name;
+        this.height = height;
+    }
 
-console.log(add(2,5));
-console.log(multiply(2,5));
-console.log(substraction(10,6));
+    greet() {
+        console.log(`Hi! I'm ${this.name} from the Middle Earth`);
+    }
+}
+
+let merry = new Entity('Merry',4.6);
+merry.greet();
