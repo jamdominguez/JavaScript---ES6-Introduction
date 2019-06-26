@@ -29,6 +29,8 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 - [6. Classes in ES6](#6-Classes-in-ES6)
   - [6.1. Classes set up](#61-Classes-set-up)
   - [6.1. Classes inheritance](#61-Classes-inheritance)
+- [7. Extending Upon ES6 with React](#7-Extending-Upon-ES6-with-React)
+  - [7.1. JSX in ES6](#71-JSX-in-ES6)
 - [NOTES](#NOTES)
 
 ## What is new in ES6?
@@ -465,7 +467,59 @@ console.log(frodo)
 frodo.greet()
 ````
 
+# 7. Extending Upon ES6 with React
+React is a popular JavaScript framework that allows for web development in ES6.<br>
+To use react is necessary add some more libraries.
+````comman
+npm install react-dom react babel-preset-react --save-dev
+````
+Is necessary make a couple of changes in our application. The first in **package.json** file, add "react" into "babel presets". And into the **.babelrc** file add "react" into "presets".
+````json
+// inside package.json
+  },
+  "babel": {
+    "presets": [
+          "es2015", "react"
+    ]
+  },
+````
+````json
+// inside .babelrc
+{
+    "presets": ["env", "react"]
+}
+````
 
+## 7.1. JSX in ES6
+JSX is a ES extension and let us write html code into js code. With JSX it is possible create the application component.<br>
+Inside index.html must include a div with id called **root**. React is going to know target this id of root and overlay all of its component rendering right onto this div.
+````html
+<!-- Inside index.html-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
+````
+It is possible define component, how it render into HTML and the component behavior. The **render()** method is a Component method that define how render the component.
+````javascript
+// inside index.js define App component
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {    
+    render() {
+        return (
+            <div>React JS and JSC in action</div>
+        )
+    }
+}
+
+// The component tag name App is the class name, and the second argument is the element to replace
+ReactDOM.render(<App/>, document.getElementById('root'));
+````
 
 
 

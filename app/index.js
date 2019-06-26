@@ -1,19 +1,13 @@
-import Entity from "./entity"
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-class Hobbit extends Entity {
-    // Not is necessary if the implementation is equal to the parent
-    constructor(name, height) {
-        super(name, height)        
-    }
-
-    //@Override
-    greet() {
-        console.log(`Hello! I'm ${this.name} from the Shire`)
+class App extends React.Component {    
+    render() {
+        return (
+            <div>React JS and JSC in action</div>
+        )
     }
 }
 
-let frodo = new Hobbit('Frodo Baggins',4.7)
-console.log(frodo)
-frodo.greet()
-
-
+// The component tag name App is the class name, and the second argument is the element to replace
+ReactDOM.render(<App/>, document.getElementById('root'));
