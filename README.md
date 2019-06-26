@@ -23,7 +23,9 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
   - [4.3. Map Method - mapping in ES6](#43-Map-Method---mapping-in-ES6)
   - [4.4. Filter Method - filtering in ES6](#44-Filter-Method---filtering-in-ES6)
-- [Modules in ES](#Modules-in-ES)
+- [5. Modules in ES](#5-Modules-in-ES)
+  - [5.1. Exporting variables/constants](#51-Exporting-variablesconstants)
+  - [5.2. Exporting data/functions](#52-Exporting-datafunctions)
 
 ## What is new in ES6?
 - Syntax and features
@@ -339,7 +341,8 @@ More helper methods with ES6. We can take advantage of their functions to reduce
 - **reduce(), some(), keys(), values()**...
 
 
-# Modules in ES
+# 5. Modules in ES
+## 5.1. Exporting variables/constants
 Modules in JavaScript refert ot reusable pieces of code within our application or system. It helps whe our application grows.<br>
 The **export** keyword let access the code from other file using **import** keyword.
 ````javascript
@@ -353,3 +356,40 @@ import { students } from "./student";
 console.log(students)
 ````
 If need export all file content it is possible export a module instead echa variable/function
+
+## 5.2. Exporting data/functions
+Is usefull hava a library function (the ussually utils.js). Could we export theses functions.
+````javascript
+// inside calculator.js
+const add = (x,y) => x+y;
+const multiply = (x,y) => x*y;
+
+export {add, multiply}
+````
+````javascript
+// inside index.js
+import { add, multiply } from "./calculator";
+
+console.log(add(2,5));
+console.log(multiply(2,5));
+````
+It is possible export a function by default. If a function is defined by default export, not is necessary import this into bracers **{}**.
+````javascript
+// inside calculator.js
+const substraction = (x,y) => x-y;
+
+export default substraction;
+````
+````javascript
+// inside index.js
+import substraction from "./calculator";
+
+console.log(substraction(10,6));
+````
+Note a invalid syntax when make a default export.
+````javascript
+// inside calculator.js
+export default const multiply (x,y) => x*y; // This retur a error in the browser. INVALID SYNTAX
+````
+The default export represents a fallback or “main” value/function for a module.<br>
+You cannot write the export default syntax and declare variables on the same line
