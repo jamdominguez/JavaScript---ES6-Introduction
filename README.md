@@ -1,13 +1,13 @@
 # JavaScript-ES6_Introduction
 Introduction to ES6 using Node and Webpack.<br>
-It is a [Udemy](https://www.udemy.com/) course resolution:
+It is a [Udemy](https://www.udemy.com/) course resolution.
 
-<p align="center">
+<div align="center">
 
 ![Essentials in JavaScript ES6 - A Fun Clear Introduction](courseImage.png)<br>
  [Essentials in JavaScript ES6 - A Fun Clear Introduction](https://www.udemy.com/essentials-in-javascript-es6/) for David Joseph Katz.
 
- </p>
+ </div>
 
 ## Table of contents
 - [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
