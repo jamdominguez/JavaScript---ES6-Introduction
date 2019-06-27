@@ -31,6 +31,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
   - [6.1. Classes inheritance](#61-Classes-inheritance)
 - [7. Extending Upon ES6 with React](#7-Extending-Upon-ES6-with-React)
   - [7.1. JSX in ES6](#71-JSX-in-ES6)
+  - [7.2. Promises](#72-Promises)
 - [NOTES](#NOTES)
 
 ## What is new in ES6?
@@ -491,7 +492,8 @@ Is necessary make a couple of changes in our application. The first in **package
 ````
 
 ## 7.1. JSX in ES6
-JSX is a ES extension and let us write html code into js code. With JSX it is possible create the application component.<br>
+JSX adds XML syntax to JavaScript and allows for rendering elements and components onto a web application.
+JSX is a ES extension and let us write HTML code into JavaScript code. With JSX it is possible create the application component.<br>
 Inside index.html must include a div with id called **root**. React is going to know target this id of root and overlay all of its component rendering right onto this div.
 ````html
 <!-- Inside index.html-->
@@ -509,10 +511,134 @@ It is possible define component, how it render into HTML and the component behav
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {    
+class App extends Component {    
     render() {
         return (
-            <div>React JS and JSC in action</div>
+            <div>React JS and JSX in action</div>
+        )
+    }
+}
+
+// The component tag name App is the class name, and the second argument is the element to replace
+ReactDOM.render(<App/>, document.getElementById('root'));
+````
+
+## 7.2. Promises
+A promise handles the eventual result of an operation and determines if it returns a success or failure.<br>
+To get our data for this app and test the promise with ES6 and React, we use an API called [Open Weather Map](https://home.openweathermap.org/), it publibshes free data based on weather in cities and a whole lot of other analytics.
+The API responses have JSON format and is necessary sign in and a [API key for work](https://home.openweathermap.org/api_keys).<br>
+The API to use is [Current weather data](https://openweathermap.org/current). In the API documentation can get a Examples of API calls like http://api.openweathermap.org/data/2.5/weather?q=London. Furthermore set the API url is necessary set the API ID in the call, it will be the api key gotten previously.<br>
+The **fetch()** method returns a promise, we can use the **then()** method to execute things when the reponse arrive.
+````javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+// my api key
+const api_key = '68bb3929b7da22171b348bd3e352da18';
+
+class App extends Component {
+    /** Initialize the component */
+    constructor(props) {
+        super(props);
+        this.state = {
+            city: 'Barcelona',
+            description: ''
+        }
+    }
+    /** Called when the component is rendered */
+    componentDidMount() {
+        this.grabWeather(this.state.city);
+    }
+    /** get the weather from the API */
+    grabWeather(city) {
+        // fetch returns a promise
+        fetch(`http://api.openweathermap.org/data/2.5/weather?APPID=${api_key}&q=${city}`)
+        .then(response => console.log(response));
+    }
+    /** Component Render in HTML */
+    render() {
+        return (
+            <div>React JS and JSX in action</div>
+        )
+    }
+}
+
+// The component tag name App is the class name, and the second argument is the element to replace
+ReactDOM.render(<App/>, document.getElementById('root'));
+````
+To get de JSON response and set the weather description:
+````javascript
+// inside index.js
+    grabWeather(city) {
+        // fetch returns a promise
+        fetch(`http://api.openweathermap.org/data/2.5/weather?APPID=${api_key}&q=${city}`)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            this.setState({description: json.weather[0].description})
+        });
+    }
+````
+To show the info in the page modifying the render method in the App component. With **{}** we can access to the component properties. We can add component properties to get more information from the API.
+````javascript
+// inside index.js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+// my api key
+const api_key = '68bb3929b7da22171b348bd3e352da18';
+
+class App extends Component {
+
+    /** Initialize the component */
+    constructor(props) {
+        super(props);
+        this.state = {
+            city: 'Barcelona',
+            description: '',
+            tempK: '',
+            tempC: '',
+            humidity: ''
+        }
+    }
+
+    /** Called when the component is rendered */
+    componentDidMount() {
+        this.grabWeather(this.state.city);
+    }
+
+    /** get the weather from the API */
+    grabWeather(city) {
+        // fetch returns a promise
+        fetch(`http://api.openweathermap.org/data/2.5/weather?APPID=${api_key}&q=${city}`)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            this.setState({
+                description: json.weather[0].description,
+                tempK: json.main.temp,
+                tempC: this.kelvinToCelsius(json.main.temp),
+                humidity: json.main.humidity
+            })
+        });
+    }
+
+    /** Returns the kelvin grades in celsius format */
+    kelvinToCelsius(kelvin_grades) {
+        return (kelvin_grades - 273.15).toFixed(2);
+    }
+
+    /** Component Render in HTML */
+    render() {
+        return (
+            <div>
+                <h2>Wheather Report for: {this.state.city}</h2>
+                <ul>
+                    <li>Description: {this.state.description}</li>
+                    <li>Temp: {this.state.tempK}ºK / {this.state.tempC}ºC</li>
+                    <li>Humidity: {this.state.humidity}%</li>
+                </ul>
+            </div>
         )
     }
 }
@@ -523,13 +649,9 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 
 
-
-
 _________________________________
 _________________________________
 _________________________________
 _________________________________
 # NOTES
-- Is it possible arrow function into class definition?
-- Is it possible "autoimport"(inheritance classes) in Visual Studio Code?
-- How comment several code lines in Visual Studio Code? 
+- **Is it possible arrow function into class definition?** Yes, but if the methods are implemented with arrow function theses don't will be added to the prototype. The arrow functions aren't methods, are anonymous function expresions. So the only way to add them to a class is by assignment to a property. In my opinion better not use arrow function to implement Class methods. Reference: [Of Classes and Arrow Functions](https://javascriptweblog.wordpress.com/2015/11/02/of-classes-and-arrow-functions-a-cautionary-tale/)
