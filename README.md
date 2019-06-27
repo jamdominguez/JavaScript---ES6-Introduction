@@ -1,6 +1,13 @@
 # JavaScript-ES6_Introduction
-Introduction to ES6 using Node and Webpack.
-Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
+Introduction to ES6 using Node and Webpack.<br>
+It is a [Udemy](https://www.udemy.com/) course resolution:
+
+<p align="center">
+
+![Essentials in JavaScript ES6 - A Fun Clear Introduction](courseImage.png)<br>
+ [Essentials in JavaScript ES6 - A Fun Clear Introduction](https://www.udemy.com/essentials-in-javascript-es6/) for David Joseph Katz.
+
+ </p>
 
 ## Table of contents
 - [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
@@ -39,7 +46,7 @@ Reference to Udemy course: https://www.udemy.com/essentials-in-javascript-es6/
 - Classes, modules, array and object manipulation
 
 ## Tools
-- Node: Install or use portable version setting Node path into "path" environment variable. With node we can use node package manager (npm) to installa dependencies.
+- Node: Install or use portable version setting Node path into "path" environment variable. With node we can use node package manager (npm) to install dependencies.
   ``` command
   node -v    ..... To show the Node version
   npm -v     ..... To show the Node version
