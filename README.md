@@ -1,6 +1,6 @@
 # JavaScript-ES6_Introduction
 Introduction to ES6 using Node and Webpack.<br>
-It is a [Udemy](https://www.udemy.com/) course resolution.
+It is based in a [Udemy](https://www.udemy.com/) course.
 
 <div align="center">
 
@@ -48,9 +48,9 @@ It is a [Udemy](https://www.udemy.com/) course resolution.
 ## Tools
 - Node: Install or use portable version setting Node path into "path" environment variable. With node we can use node package manager (npm) to install dependencies.
   ``` command
-  node -v    ..... To show the Node version
-  npm -v     ..... To show the Node version
-  npm i npm  ..... To show the Node version
+  node -v                    ... To show the Node version
+  npm -v                     ... To show the Node Package Manager version
+  npm install npm@latest -g  ... To install the newest npm update
   ```
 
 - Babel: A transpiler reads code written in one language and produces the equivalent code in another. Browsers only currently have widespread support of older JS. Transpiler convert advanced TypeScript and CoffeScript code back into the original JS. Transpiles ES6 back into the supported pre ES6 JS. Babel is a JavaScript compiler.
@@ -78,17 +78,43 @@ It is a [Udemy](https://www.udemy.com/) course resolution.
     ````
 ## 1.2. Configure Webpack and Development Server
 Webpack let export the application like bundle. For it is necessary configure the "webpack.config.js" file. to define the module export. <br>
+````javascript
+// inside webpack.config.js
+const path = require('path')
+
+module.exports = {
+    entry: path.resolve(__dirname, 'app'), //where is the javasript files, dirname is necesary because must be a absolute path
+    output:{ //where is the bundle output files
+        path: path.resolve(__dirname, 'build'), //must be absolute path,  dirname is necesary because must be a absolute path
+        filename: 'bundle.js'
+    },
+    devServer:{
+        port: 3000,
+        contentBase: path.resolve(__dirname, 'build') //where is the files to deploy
+    },
+    module:{
+        rules:[
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+        ]
+    }
+};
+````
 With the bundle funcionality will get the "build" folder with "bundle.js" and not need anymore the "dist" folder.
 Is necessary install a webpack server to test the application. For this:
 ```` command
 npm i webpack-dev-server@3.1.4 --save-dev ..... to install a webpack development server
 ````
 Now is necessary change the "start" script inside package.json to "webpack-dev-server --module development".
-Is necessary too add a new key "devServer" into webpack.config.js to define the devlopment server features.
+Is necessary too add a new key "devServer" into webpack.config.js to define the devlopment server features. In may case I've renamed the scripts: "start" for develop in local server, and "buildDev" and "buildProd" for release code.
 After add the new key, when the command "npm run start" application will be deployed and the server will be run.
 With the server run, the changes into "index.js" (file into app folder) can be shown inmeidately in the browser.
 The package.json will be:
 ````json
+// inside package.json
 {
   "name": "es6",
   "version": "1.0.0",
@@ -121,7 +147,14 @@ Is necessary add three new dependencies related to configuring Babel:
 ````command
 npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev ..... install the Babel core, loader y preset environment
 ````
-Babel must be configured into "webpack.config.js" file, add a new key for this "module". But is necessary a extra configuration, for this create a new file ".babelrc"
+Babel must be configured into "webpack.config.js" file, add a new key for this "module". But is necessary a extra configuration, for this create a new file ".babelrc".
+````json
+// inside .babelrc
+{
+    "presets": ["env"]
+}
+````
+
 
 # 2. Coding New ES6 Syntax
 ## 2.1. Declare variables and scope
@@ -312,7 +345,7 @@ const newprint = function() {
 newprint();
 
 const newarrowPrint = () => {
-    console.log('this.a in arrowPrint',this.a); //show 10, aroww function don't have this object in the scope
+    console.log('this.a in arrowPrint',this.a); //show 10, arrow function doesn't have this object in the scope
 }
 newarrowPrint();
 ````
