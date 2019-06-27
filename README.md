@@ -4,7 +4,7 @@ It is based in a [Udemy](https://www.udemy.com/) course.
 
 <div align="center">
 
-![Essentials in JavaScript ES6 - A Fun Clear Introduction](courseImage.png)<br>
+![Essentials in JavaScript ES6 - A Fun Clear Introduction](courseIcon.png)<br>
  [Essentials in JavaScript ES6 - A Fun Clear Introduction](https://www.udemy.com/essentials-in-javascript-es6/) for David Joseph Katz.
 
  </div>
