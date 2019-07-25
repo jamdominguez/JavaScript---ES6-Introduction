@@ -2,6 +2,9 @@
 Introduction to ES6 using Node and Webpack.<br>
 It is based in a [Udemy](https://www.udemy.com/) course.
 
+<br>**Status: Completed**<br>
+
+
 <div align="center">
 
 ![Essentials in JavaScript ES6 - A Fun Clear Introduction](courseIcon.png)<br>
