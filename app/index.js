@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { TSCallSignatureDeclaration, TSImportEqualsDeclaration } from 'babel-types';
 
 // my api key
 const api_key = '68bb3929b7da22171b348bd3e352da18';
@@ -51,16 +52,20 @@ class App extends Component {
     /** Component Render in HTML */
     render() {
         return (
-            <div>
-                <h2>Wheather Report for: {this.state.city}</h2>
-                <ul>
-                    <li>Description: {this.state.description}</li>
-                    <li>Temp: {this.state.tempK}ºK / {this.state.tempC}ºC</li>
-                    <li>Humidity: {this.state.humidity}%</li>                    
+            <div align="center" className="container">
+                <h3>Wheather Report for: {this.state.city}</h3>
+                <br></br>                            
+                <ul className="list-group">
+                    <li className="list-group-item">Description: {this.state.description}</li>
+                    <li className="list-group-item">Temp: {this.state.tempK}ºK / {this.state.tempC}ºC</li>
+                    <li className="list-group-item">Humidity: {this.state.humidity}%</li>                    
                 </ul>
-                <span>
-                    <input id="newCity" placeholder="Check anohter city" type="text"></input>
-                    <button type="submit" onClick={()=>{
+                <br></br>                
+                <form className="form-inline">
+                    <div className="form-group mx-sm-3 mb-2">
+                        <input className="form-control" id="newCity" placeholder="Check anohter city" type="text"></input>
+                    </div>    
+                    <button className="btn btn-dark mb-2" type="button" onClick={()=>{
                         let newCity = document.getElementById("newCity").value;
                         if (typeof newCity !== 'undefined' && newCity.trim() != "") {            
                             this.state.city = newCity
@@ -68,7 +73,7 @@ class App extends Component {
                         }
                     }
                     }>Check</button>
-                </span>
+                </form>                
             </div>
         )
     }
