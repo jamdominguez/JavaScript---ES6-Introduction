@@ -25,7 +25,7 @@ It is based in a [Udemy](https://www.udemy.com/) course.
   - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
   - [2.2. Declare constants](#22-Declare-constants)
   - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
-- [3 Operating and Destructuring](#3-Operating-and-Destructuring)
+- [3. Operating and Destructuring](#3-Operating-and-Destructuring)
   - [3.1. Destructuring assignament - Arrays](#31-Destructuring-assignament---Arrays)
   - [3.2. Destructuring assignament - Objects](#32-Destructuring-assignament---Objects)
 - [4. Functions and Methods](#4-Functions-and-Methods)
@@ -207,7 +207,7 @@ let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
 ````
 
-# 3 Operating and Destructuring
+# 3. Operating and Destructuring
 ## 3.1. Destructuring assignament - Arrays
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
