@@ -13,36 +13,36 @@ It is based in a [Udemy](https://www.udemy.com/) course.
  </div>
 
 ## Table of contents
-- [JavaScript-ES6_Introduction](#javascript-es6introduction)
-  - [Table of contents](#table-of-contents)
-  - [What is new in ES6?](#what-is-new-in-es6)
-  - [Tools](#tools)
-- [1. Project Configuration](#1-project-configuration)
-  - [1.1. Set up Project Webpack 4](#11-set-up-project-webpack-4)
-  - [1.2. Configure Webpack and Development Server](#12-configure-webpack-and-development-server)
-  - [1.3. Set up Babel with Webpack](#13-set-up-babel-with-webpack)
-- [2. Coding New ES6 Syntax](#2-coding-new-es6-syntax)
-  - [2.1. Declare variables and scope](#21-declare-variables-and-scope)
-  - [2.2. Declare constants](#22-declare-constants)
-  - [2.3. Template Literals/Strings](#23-template-literalsstrings)
-- [3 Operating and Destructuring](#3-operating-and-destructuring)
-  - [3.1. Destructuring assignament - Arrays](#31-destructuring-assignament---arrays)
-  - [3.2. Destructuring assignament - Objects](#32-destructuring-assignament---objects)
-- [4. Functions and Methods](#4-functions-and-methods)
-  - [4.1. Arrow Functions](#41-arrow-functions)
-  - [4.2. Arrow Function ignoring **this**](#42-arrow-function-ignoring-this)
-  - [4.3. Map Method - mapping in ES6](#43-map-method---mapping-in-es6)
-  - [4.4. Filter Method - filtering in ES6](#44-filter-method---filtering-in-es6)
-- [5. Modules in ES6](#5-modules-in-es6)
-  - [5.1. Exporting variables/constants](#51-exporting-variablesconstants)
-  - [5.2. Exporting data/functions](#52-exporting-datafunctions)
-- [6. Classes in ES6](#6-classes-in-es6)
-  - [6.1. Classes set up](#61-classes-set-up)
-  - [6.1. Classes inheritance](#61-classes-inheritance)
-- [7. Extending Upon ES6 with React](#7-extending-upon-es6-with-react)
-  - [7.1. JSX in ES6](#71-jsx-in-es6)
-  - [7.2. Promises](#72-promises)
-- [NOTES](#notes)
+- [JavaScript-ES6_Introduction](#JavaScript-ES6Introduction)
+  - [Table of contents](#Table-of-contents)
+  - [What is new in ES6?](#What-is-new-in-ES6)
+  - [Tools](#Tools)
+- [1. Project Configuration](#1-Project-Configuration)
+  - [1.1. Set up Project Webpack 4](#11-Set-up-Project-Webpack-4)
+  - [1.2. Configure Webpack and Development Server](#12-Configure-Webpack-and-Development-Server)
+  - [1.3. Set up Babel with Webpack](#13-Set-up-Babel-with-Webpack)
+- [2. Coding New ES6 Syntax](#2-Coding-New-ES6-Syntax)
+  - [2.1. Declare variables and scope](#21-Declare-variables-and-scope)
+  - [2.2. Declare constants](#22-Declare-constants)
+  - [2.3. Template Literals/Strings](#23-Template-LiteralsStrings)
+- [3. Operating and Destructuring](#3-Operating-and-Destructuring)
+  - [3.1. Destructuring assignament - Arrays](#31-Destructuring-assignament---Arrays)
+  - [3.2. Destructuring assignament - Objects](#32-Destructuring-assignament---Objects)
+- [4. Functions and Methods](#4-Functions-and-Methods)
+  - [4.1. Arrow Functions](#41-Arrow-Functions)
+  - [4.2. Arrow Function ignoring **this**](#42-Arrow-Function-ignoring-this)
+  - [4.3. Map Method - mapping in ES6](#43-Map-Method---mapping-in-ES6)
+  - [4.4. Filter Method - filtering in ES6](#44-Filter-Method---filtering-in-ES6)
+- [5. Modules in ES6](#5-Modules-in-ES6)
+  - [5.1. Exporting variables/constants](#51-Exporting-variablesconstants)
+  - [5.2. Exporting data/functions](#52-Exporting-datafunctions)
+- [6. Classes in ES6](#6-Classes-in-ES6)
+  - [6.1. Classes set up](#61-Classes-set-up)
+  - [6.1. Classes inheritance](#61-Classes-inheritance)
+- [7. Extending Upon ES6 with React](#7-Extending-Upon-ES6-with-React)
+  - [7.1. JSX in ES6](#71-JSX-in-ES6)
+  - [7.2. Promises](#72-Promises)
+- [NOTES](#NOTES)
 
 ## What is new in ES6?
 - Syntax and features
@@ -207,7 +207,7 @@ let message_02 = `${greeting} ${name}`; //ES6 template for literals/strings
 console.log(message_02);
 ````
 
-# 3 Operating and Destructuring
+# 3. Operating and Destructuring
 ## 3.1. Destructuring assignament - Arrays
 ES6 introduces a new way to manipulate arrays and objects.
 It is possible include a array into other one using "..." spread operator. It is equivalent to ".concat" instruction in ES5 (use Babel transpiler).
