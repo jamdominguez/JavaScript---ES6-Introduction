@@ -25,6 +25,8 @@ class App extends Component {
 
     /** get the weather from the API */
     grabWeather(city) {
+        console.log("grabWeather1:");
+        console.log(this);
         // fetch returns a promise
         fetch(`http://api.openweathermap.org/data/2.5/weather?APPID=${api_key}&q=${city}`)
         .then(response => response.json())
@@ -37,6 +39,8 @@ class App extends Component {
                 humidity: json.main.humidity
             })
         });
+        console.log("grabWeather2:");
+        console.log(this);
     }
 
     /** Returns the kelvin grades in celsius format */
@@ -52,8 +56,19 @@ class App extends Component {
                 <ul>
                     <li>Description: {this.state.description}</li>
                     <li>Temp: {this.state.tempK}ºK / {this.state.tempC}ºC</li>
-                    <li>Humidity: {this.state.humidity}%</li>
+                    <li>Humidity: {this.state.humidity}%</li>                    
                 </ul>
+                <span>
+                    <input id="newCity" placeholder="Check anohter city" type="text"></input>
+                    <button type="submit" onClick={()=>{
+                        let newCity = document.getElementById("newCity").value;
+                        if (typeof newCity !== 'undefined' && newCity.trim() != "") {            
+                            this.state.city = newCity
+                            this.componentDidMount()
+                        }
+                    }
+                    }>Check</button>
+                </span>
             </div>
         )
     }
