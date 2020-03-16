@@ -11,6 +11,14 @@ It is based in a [Udemy](https://www.udemy.com/) course.
  [Essentials in JavaScript ES6 - A Fun Clear Introduction](https://www.udemy.com/essentials-in-javascript-es6/) for David Joseph Katz.
 
  </div>
+ 
+ ### Personal Set Up
+- CUP: i5-7600K@3.80GHz 
+- RAM: 16GB
+- Environment: Windows 10
+- Browser: Google Chrome (80)
+- IDE: Visual Studio Code (1.43)
+- IDE Extensions: Markdown all in one
 
 ## Table of contents
 - [JavaScript-ES6_Introduction](#javascript-es6introduction)
